@@ -12,14 +12,14 @@ store = Store(
     'картошка': 10,
     'печенье': 10
     },
-    capacity=100
+    capasity=100
 )
 
 shop = Shop(
     items={
     'печенье': 5
     },
-    capacity=20,
+    capasity=20,
     max_unique_items=5
 )
 

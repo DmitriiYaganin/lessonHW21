@@ -7,6 +7,10 @@ from exceptions import TooManyDifferentProductsError
 class Shop(BaseStorage):
 
     def __init__(self, items: Dict[str, int], capasity: int, max_unique_items: int):
+        """
+
+        :rtype: object
+        """
         self.__max_unique_items = max_unique_items
         super().__init__(items, capasity)
 

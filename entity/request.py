@@ -16,5 +16,5 @@ class Request:
         self.departure = split_request[4]
         self.destination = split_request[6]
 
-        if self.departure in storages or self.destination in storages:
+        if self.departure not in storages or self.destination not in storages:
             raise UnknownStorageError

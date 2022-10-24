@@ -10,14 +10,14 @@ from exceptions import BaseError
 store = Store(
     items={
     'картошка': 10,
-    'печенье': 10
+    'печенька': 10
     },
     capasity=100
 )
 
 shop = Shop(
     items={
-    'печенье': 5
+    'печенька': 5
     },
     capasity=20,
     max_unique_items=5
@@ -37,8 +37,8 @@ def main():
             print(f"В {storage_name} хранится:\n{storage.get_items()}")
 
         raw_request: str = input(
-            'Введите запрос в формате: "Доставить 3 печенья из склад в магазин"\n'
-            'Введите "stop" или "стоп", чтобы закончить'
+            'Введите запрос в формате: "Доставить 3 печенька из склад в магазин"\n'
+            'Введите "stop" или "стоп", чтобы закончить:\n'
         )
 
         if raw_request in ("stop", "стоп"):
@@ -51,10 +51,12 @@ def main():
             continue
 
         courier = Courier(request=request, storages=storages)
+
         try:
             courier.move()
         except BaseError as error:
             print(error.message)
+            # courier.cancel()
 
 
 if __name__ == '__main__':

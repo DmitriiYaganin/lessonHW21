@@ -5,7 +5,7 @@ from entity.request import Request
 
 
 class Courier:
-    def __int__(self, request: Request, storages: Dict[str, AbstractStorage]):
+    def __init__(self, request: Request, storages: Dict[str, AbstractStorage]):
         self.__request = request
 
         self.departure: AbstractStorage = storages[self.__request.departure]
